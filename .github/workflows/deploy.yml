@@ -1,0 +1,25 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up SSH
+      run: |
+        echo "${{ secrets.DEPLOY_KEY }}" > private_key.pem
+        chmod 600 private_key.pem
+
+    - name: Deploy to Digital Ocean
+      run: |
+        rsync -avzr --delete --exclude '.git*' -e 'ssh -i private_key.pem -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null' ./ ryan@167.172.178.149:/var/www/ryanrong.site/public_html
+      env:
+        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}

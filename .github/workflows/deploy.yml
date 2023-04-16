@@ -20,6 +20,6 @@ jobs:
 
     - name: Deploy to Digital Ocean
       run: |
-        rsync -avzr --delete --exclude '.git*' -e 'ssh -i private_key.pem -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null' ./ ryan@167.172.178.149:/var/www/ryanrong.site/public_html
+        rsync -avzr --delete --exclude '.git*' -e 'ssh -i private_key.pem -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null' ./ root@167.172.178.149:/var/www/ryanrong.site/public_html
       env:
         DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}

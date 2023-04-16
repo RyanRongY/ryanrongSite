@@ -7,7 +7,7 @@ $signature = $_SERVER['HTTP_X_HUB_SIGNATURE'];
 $payload = file_get_contents('php://input');
 
 // Log the payload data to a file
-$log_file = '/path/to/log.txt';
+$log_file = '/var/www/ryanrong.site/log.txt';
 $log_data = date('Y-m-d H:i:s') . " - Signature: $signature, Payload: $payload\n";
 file_put_contents($log_file, $log_data, FILE_APPEND);
 
@@ -30,7 +30,7 @@ if (!isset($data['pusher']) || !isset($data['repository']) || !isset($data['ref'
 }
 
 // Validate the repository name
-if ($data['repository']['name'] != 'your_repository_name') {
+if ($data['repository']['name'] != 'ryanrongSite') {
     header('HTTP/1.0 400 Bad Request');
     die('Invalid repository name');
 }

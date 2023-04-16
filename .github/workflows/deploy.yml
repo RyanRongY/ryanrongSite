@@ -15,9 +15,11 @@ jobs:
 
     - name: Set up SSH
       run: |
-        printf "%s\n" "${{ secrets.DEPLOY_KEY }}" > private_key.pem
+        printf "%s" "${{ secrets.DEPLOY_KEY }}" > private_key.pem
         chmod 600 private_key.pem
-
+    - name: Check private key content
+      run: |
+        cat private_key.pem
     - name: Deploy to Digital Ocean
       run: |
         rsync -avzr --delete --exclude '.git*' -e 'ssh -i private_key.pem -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null' ./ root@167.172.178.149:/var/www/ryanrong.site/public_html

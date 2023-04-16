@@ -15,7 +15,7 @@ jobs:
 
     - name: Set up SSH
       run: |
-        echo "${{ secrets.DEPLOY_KEY }}" > private_key.pem
+        printf "%s\n" "${{ secrets.DEPLOY_KEY }}" > private_key.pem
         chmod 600 private_key.pem
 
     - name: Deploy to Digital Ocean

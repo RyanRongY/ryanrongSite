@@ -6,6 +6,6 @@ echo "Deploying changes..."
 cd /var/www/ryanrong.site/public_html
 
 # Pull in the latest changes from the GitHub repository
-sudo git pull
+git pull
 
 echo "Deployment complete!"

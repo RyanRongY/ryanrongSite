@@ -1,0 +1,10 @@
+Deploying changes...
+POST git-upload-pack (155 bytes)
+POST git-upload-pack (973 bytes)
+From https://github.com/RyanRongY/ryanrongSite
+   5492d73..5bc336b  master     -> origin/master
+Updating 5492d73..5bc336b
+Fast-forward
+ index.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Deployment complete!

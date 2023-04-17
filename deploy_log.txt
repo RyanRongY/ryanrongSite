@@ -52,3 +52,15 @@ Fast-forward
  index.html | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 Deployment complete!
+Deploying changes...
+POST git-upload-pack (155 bytes)
+From https://github.com/RyanRongY/ryanrongSite
+ = [up to date]      master     -> origin/master
+fatal: ambiguous argument 'origin/main': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+POST git-upload-pack (155 bytes)
+From https://github.com/RyanRongY/ryanrongSite
+ = [up to date]      master     -> origin/master
+Already up to date.
+Deployment complete!
